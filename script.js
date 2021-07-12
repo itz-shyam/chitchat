@@ -1,4 +1,10 @@
 function login() {
-    localStorage.setItem("username", document.getElementById("user").value);
-    window.location="main.html"
+  userid = document.getElementById("user").value;
+  localStorage.setItem("username", userid);
+  window.location = "main.html";
+}
+
+function logout() {
+  localStorage.removeItem("username");
+  window.location = "index.html";
 }
