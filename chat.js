@@ -28,6 +28,21 @@ firebase.initializeApp(firebaseConfig);
   
     document.getElementById("msg").value = "";
   }
+
+  window.addEventListener("keydown",keydown)
+  msg = document.getElementById("msg").value;
+    function keydown(e) {
+        if (e.keyCode == 13) {
+          firebase.database().ref(room_name).push({
+            name: user_name,
+            message: msg,
+            like: 0
+            //dislike:0
+          });
+        
+          document.getElementById("msg").value = "";
+        }
+}
   
   
   // till class 96
